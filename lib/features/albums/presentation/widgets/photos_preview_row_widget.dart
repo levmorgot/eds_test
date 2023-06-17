@@ -17,11 +17,9 @@ class PhotosPreviewRow extends StatelessWidget {
 
   List<Widget> _getPhotosToPreview(List<PhotoEntity> photos) {
     List<Widget> photoWidgets = [];
-    print('photosphotos $photos');
 
     final length = photos.length < 3 ? photos.length : 3;
     for (var i = 0; i < length; i++) {
-      print('photos[i].thumbnailUrl ${photos[i].thumbnailUrl}');
       photoWidgets.add(
         Padding(
           padding: const EdgeInsets.all(8.0),

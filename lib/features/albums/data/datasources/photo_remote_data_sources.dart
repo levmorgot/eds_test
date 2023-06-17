@@ -24,7 +24,6 @@ class PhotoRemoteDataSource implements IPhotoRemoteDataSource {
         .get(Uri.parse(url), headers: {'Content-Type': 'application/json'});
     if (response.statusCode == 200) {
       final photos = json.decode(response.body) as List<dynamic>;
-      print('photosJson $photos');
       return photos
           .map((dynamic photo) =>
               PhotoModel.fromJson(photo as Map<String, dynamic>))

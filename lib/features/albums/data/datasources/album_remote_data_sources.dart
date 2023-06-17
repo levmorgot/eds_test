@@ -24,7 +24,6 @@ class AlbumRemoteDataSource implements IAlbumRemoteDataSource {
         .get(Uri.parse(url), headers: {'Content-Type': 'application/json'});
     if (response.statusCode == 200) {
       final albums = json.decode(response.body) as List<dynamic>;
-      print('albumsJson $albums');
       return albums
           .map((dynamic album) =>
               AlbumModel.fromJson(album as Map<String, dynamic>))
